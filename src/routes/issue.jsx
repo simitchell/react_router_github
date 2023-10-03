@@ -1,7 +1,17 @@
+import { useLoaderData } from "react-router-dom"
+import { Issue, getIssue } from "./root"
+
+export async function loader({ params }) {
+    let issue = await getIssue(params.body);
+    return { issue };
+}
+
 export default function Issue() {
+    const { issue } = useLoaderData();
     return(
         <>
-            <p>this is the issue page!</p>
+            <h2>Github Issue Details</h2>
+            <p>{ issue.body }</p>
         </>
     )
 }

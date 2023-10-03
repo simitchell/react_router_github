@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Root, { loader as rootLoader } from "./routes/root";
-import Issue from './routes/issue';
+import Issue, { loader as issueLoader } from './routes/issue';
 
 const router = createBrowserRouter([
   {
@@ -15,8 +15,9 @@ const router = createBrowserRouter([
     loader: rootLoader,
     children: [
       {
-        path: "/",
+        path: "/issue/:issueNumber",
         element: <Issue />,
+        loader: issueLoader,
       }
     ]
   },
