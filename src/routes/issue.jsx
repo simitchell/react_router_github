@@ -6,8 +6,8 @@ export async function loader({ params }) {
     return { issue };
 }
 
-export default function Issue() {
-    const { issue } = useLoaderData();
+export default function issueData() {
+    const { issueData } = useLoaderData();
     return(
         <>
             <h2>Github Issue Details</h2>
